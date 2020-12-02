@@ -1,0 +1,171 @@
+@import "color"
+body
+    background-color: #181818
+    color: #ffffff
+    font-size: 2rem
+    overflow-x: hidden
+p
+    line-height: 3rem
+h1
+    font-size: 6vw
+    margin: 0
+    font-weight: 700
+header
+    background-color: #181818
+    position: fixed
+    width: 100%
+    height: 3rem
+    padding: 0 16vw
+    display: flex
+    font-size: .9rem
+    align-items: center
+    top: 0
+    z-index: 999
+    .logo
+        color: #fff
+        font-size: 1rem
+    a
+        text-decoration: none
+        padding: 0 20px
+        color: #9d9d9d
+        font-weight: 500
+    i
+        color: #ffffff
+    a:hover
+        color: white
+    #signin
+        color: #0099ff
+    #signin:hover
+        color: #0066dd
+    #signup
+        margin-left: 15px
+        color: white
+        padding: 10px 20px
+        background-color: #0099ff
+        border-radius: 20px
+.intro
+    font-size: 1.6rem
+    text-align: center
+    width: 60%
+    margin: 20vh auto 10vh auto
+    top: 3rem
+    p
+        color: #bbbbbb
+        margin: 0 0 50px 0
+    a
+        text-decoration: none
+        color: white
+        padding: 15px 20px
+        font-size: 1.2rem
+        background-color: #0099ff
+        border-radius: 25px
+    i
+        margin-left: 10px
+    a:hover
+        background-color: #00aaff
+.Hero__image
+    width: 98.9vw
+    height: 80vh
+    z-index: -1
+    background: url(../Media/backdrop-app.png)
+    transform: perspective(3rem) rotateX(2deg)
+    display: flex
+    justify-content: center
+    padding-top: 40px
+    animation: fade 0.3s infinite
+    animation-play-state: paused
+    animation-delay: calc(var(--scroll) * -1s)
+    #center-image
+        width: 40vw
+        border-radius: 30px
+        transform: perspective(3rem) translateZ(-1rem) scaleY(0.8)
+        animation: persp 0.3s linear
+        animation-play-state: paused
+        animation-delay: calc(var(--scroll) * -1s - 0.04s)
+        z-index: -1
+@keyframes persp
+    50%
+        width: 70vw
+        transform: perspective(3rem) rotateX(-1.9deg)
+    100%
+        width: 70vw
+        transform: perspective(3rem) rotateX(-1.9deg)
+@keyframes fade
+    to
+        background: radial-gradient(#181818,#181818),url(../Media/backdrop-app.png)
+.functions
+    margin-top: 200px
+    width: 64vw
+    h1,p
+        margin-left: 16vw
+.grid
+    display: grid
+    grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) )
+    gap: 3rem
+    padding: 100px 150px
+    .grid__element
+        display: flex
+        align-items: center
+        p
+            margin: 0
+        i
+            border-radius: 15px
+            background: rgb(43,43,43)
+            background: linear-gradient(135deg, rgba(43,43,43,1) 0%, rgba(35,35,35,1) 100%)
+            width: 70px
+            padding: 22px 0
+            text-align: center
+            margin: 0 30px
+.interactive
+    margin-top: 150px
+    width: 70vw
+    h1,p
+        margin-left: 16vw
+    a
+        text-decoration: none
+.motion
+    margin-top: 150px
+    width: 61vw
+    h1,p
+        margin-left: 16vw
+.insert
+    margin-top: 150px
+    width: 75vw
+    h1,p
+        margin-left: 16vw
+    p
+        width: 70%
+    .green
+        align-content: center
+    button
+        font-size: 5rem
+        padding: 7px 30px
+        border-radius: 30px
+        font-family: Google Sans
+        background-color: #00c583
+        color: #fff
+        box-shadow: 0 0 10rem black
+        border: none
+        cursor: pointer
+        transition: .2s linear
+        font-weight: 700
+    button:hover
+        transform: scale(1.05)
+    button:active ~ #pressed
+        animation: jump .3s linear
+    button:active
+        transform: none
+    #pressed
+        display: inline-block
+    a
+        text-decoration: none
+    span
+        position: relative
+        left: 70vw
+        top: -11rem
+        display: none
+        height: 4rem
+        margin-bottom: -4rem
+@keyframes jump 
+    50%
+        transform: scale(0.9)
